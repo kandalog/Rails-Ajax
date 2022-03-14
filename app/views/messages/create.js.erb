@@ -1,0 +1,5 @@
+// 最後の@messageは_message.html.erbを挿入している
+// jはエスケープ_message.html.erbに改行があるのでエスケープ処理が必要
+// js.erb内ではjエスケープを適応するのがポイント
+document.getElementById('messages').insertAdjacentHTML('beforeend', '<%= j(render @message) %>')
+document.getElementById('message_content').value = ''
