@@ -1,3 +1,11 @@
-<p>
+<p id="message-<%= message.id %>">
   <%= message.content %>
+
+  <%= link_to '更新', edit_message_path(message), data: { remote: true, turbo_method: :get }  %>
+
+  <%= link_to '削除', message_path(message), 
+data: { turbo_confirm: '削除しますか？',
+        remote: true,
+        turbo_method: :delete }
+        %>
 </p>
